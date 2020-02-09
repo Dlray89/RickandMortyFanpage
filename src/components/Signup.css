@@ -1,0 +1,17 @@
+.signup{
+    text-align: center;
+}
+h1{
+    text-align: center;
+    color: white;
+}
+
+.signupBtn{
+    width: 25%;
+     padding: 1%;
+     font-size: 20px;
+
+    margin: 2% auto;
+      background: linear-gradient(to top, #2193b0, #6dd5ed);
+
+}
