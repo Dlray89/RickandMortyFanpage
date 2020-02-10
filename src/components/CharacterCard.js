@@ -14,6 +14,7 @@ const StyleCard = styled.div`
 
 export default function CharacterCard(props) {
   return (
+    <div>
   
       <StyleCard>
         <h2>Name: {props.character.name}</h2>
@@ -21,6 +22,8 @@ export default function CharacterCard(props) {
         <p>Staus: {props.character.status}</p>
         <img alt="characters of rick and morty" src={props.character.image} />
       </StyleCard>
+
+      </div>
 
   );
 }
