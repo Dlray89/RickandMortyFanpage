@@ -12,7 +12,6 @@ import ProtectedRoute from "./components/ProtectedRoute";
 function App() {
   return (
     <>
-      <Header />
       <Switch>
       <Route exact path="/" component={WelcomePage} />
       <Route path="/sign-up" component={SignUp} />
