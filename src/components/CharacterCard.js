@@ -1,27 +1,26 @@
 import React from "react";
-import styled from "styled-components";
-
-const StyleCard = styled.div`
-  text-align: center;
-  border: solid 2px black;
-  margin: 3% auto;
-  border-radius: 20px;
-  width: 50%;
-  background: linear-gradient(to top, #2193b0, #6dd5ed);
-  padding: 3%;
-`;
+import {Card, CardHeader, makeStyles} from "@material-ui/core"
+const useStyles = makeStyles((theme) => ({
+    cards:{
+        width:"30%",
+        margin:"3% 0"
+    },
+    CharacterIMG:{
+        width:"30%"
+    }
+}))
 
 
 export default function CharacterCard(props) {
+    const classes = useStyles()
   return (
     <div>
   
-      <StyleCard>
-        <h2>Name: {props.character.name}</h2>
+      <Card className={classes.cards}>
+          <CardHeader title={props.character.name} subheader={props.character.status} />
         <h3>Gender: {props.character.gender}</h3>
-        <p>Staus: {props.character.status}</p>
-        <img alt="characters of rick and morty" src={props.character.image} />
-      </StyleCard>
+        <img className={classes.CharacterIMG} alt="characters of rick and morty" src={props.character.image} />
+      </Card>
 
       </div>
 
