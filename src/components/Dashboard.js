@@ -50,7 +50,7 @@ export default function CharacterList() {
             <div style={{display:"flex", flexWrap:"wrap"}}>
                 {characters.map((character) =>
                     <Card variant="outlined" style={{ width: "30%", margin: "3% auto" }} key={character.id}>
-                        <CardHeader title={character.name} subheader={character.gender} />
+                       <Link to={`${character.id}`} ><CardHeader title={character.name} subheader={character.gender} /></Link> 
                         <Divider />
                         <CardContent style={{ display: "flex", flexDirection: "row-reverse", justifyContent: "space-evenly", alignContent: "center" }}>
                             <div>

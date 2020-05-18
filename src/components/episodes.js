@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { Card, CardHeader, Divider, CardContent, TextField } from "@material-ui/core"
 import axios from "axios"
 
 const EpisodesList = () => {
@@ -22,19 +23,28 @@ const EpisodesList = () => {
         })
     }, [query])
 
+    const handleChange = e => {
+        setQuery(e.target.value)
+    }
 
     return(
         <div>
             <div>
                 <p>Episodes</p>
-                <div>
+                <TextField onChange={handleChange} placeholder="search..." />
+                <div style={{display:"flex", flexWrap:"wrap"}}>
                     {episodes.map(episode => 
-                        <div key={episode.id}>
-                         {episode.name} <br />
-                         {episode.episode}  <br />
-                         {episode.air_date} <br />
+                        <Card style={{width:"20%", margin: " 2% 2%"}} key={episode.id}>
+                        <CardHeader title={episode.name} subheader={episode.episode} />
+                        <Divider  />
+                        <CardContent>
+                            Episode Aired: <br />
+                             {episode.air_date} <br />
                          <a href={episode.url}>URL</a>
-                         </div>
+                        </CardContent>
+                     
+                        
+                         </Card>
                         )}
                 </div>
             </div>
