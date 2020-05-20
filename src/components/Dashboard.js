@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Card, CardHeader, Divider, CardContent, CardActionArea, Button, TextField } from "@material-ui/core"
+import Breadcrumbs from "../compComponents/breadcrumbs"
 import "./Dashboard.css";
 
 
@@ -40,6 +41,8 @@ export default function CharacterList() {
                 <h1>Characters</h1>
             </div>
 
+             <div><Breadcrumbs name={characters.name}/> </div>
+
         <div style={{margin:"0 auto", textAlign:"center"}}>
             <TextField  style={{margin:"0 auto", width:"70%"}} variant="outlined" placeholder="search.." onChange={handlechanges} />
             </div>
@@ -48,6 +51,7 @@ export default function CharacterList() {
 
 
             <div style={{display:"flex", flexWrap:"wrap"}}>
+           
                 {characters.map((character) =>
                     <Card variant="outlined" style={{ width: "30%", margin: "3% auto" }} key={character.id}>
                        <Link to={`${character.id}`} ><CardHeader title={character.name} subheader={character.gender} /></Link> 
@@ -62,7 +66,7 @@ export default function CharacterList() {
 
                         </CardContent>
                         <CardActionArea style={{textAlign:"center"}}>
-                            <Button key={`${character.id}`}>Episodes</Button>
+                            <NavLink to={`/characters/${character.id}`} key={character.id}>Episodes</NavLink>
                             <Button>Location</Button>
                         </CardActionArea>
 

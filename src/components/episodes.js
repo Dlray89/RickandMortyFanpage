@@ -40,7 +40,7 @@ const EpisodesList = () => {
                         <CardContent>
                             Episode Aired: <br />
                              {episode.air_date} <br />
-                         <a href={episode.url}>URL</a>
+                         <a media={episode.url}>URL</a>
                         </CardContent>
                      
                         

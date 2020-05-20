@@ -11,7 +11,7 @@ import AMAZON from "../Icons/AMAZON.png"
 
 const useStyles = makeStyles((theme) => ({
     introRoot: {
-        border: "solid 2px red"
+      
     },
     introPic: {
         width: "98.5vw",
@@ -48,7 +48,8 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
     },
     welcomeContainer:{
-        display:"flex"
+        display:"flex",
+        padding:"0.5%",
     },
     ICONS:{
         width:"10%"
@@ -70,36 +71,46 @@ const WelcomePage = () => {
             {/* //container for sidebar and content starts here */}
             <div className={classes.welcomeContainer}>
                 {/* //sidebar for home page */}
-                <div style={{border: "solid 2px yellow", width:"15%",
-            height:"50vh"}}>
-                    <List style={{ border: "solid 2px red", width: "95%",height:"40vh", margin:"0 auto", textAlign:"center" }} disablePadding dense>
+                <div style={{ width:"10%",
+            padding:"1%", border: "solid 2px white",}}>
+                    <List style={{ width: "100%",padding:"1%", margin:"0 auto", textAlign:"center" }} disablePadding dense>
 
-                        <ListItem button>
-                          <Link to="/" style={{textDecoration:"none", color:"white"}}>  <ListItemText style={{padding:"10%", fontSize:"1rem"}}>Home</ListItemText></Link>
+                        <ListItem button style={{ padding:"3%"}}>
+                          <Link to="/" style={{textDecoration:"none", color:"white",  width:"100%", padding:"3%"}}> 
+                          
+                           <ListItemText style={{padding:"10%", fontSize:"1rem",   textAlign:'center'}}>Home</ListItemText></Link>
                         </ListItem>
 
 
-                        <Divider />
+                        <Divider style={{background:"white"}} />
 
-                        <ListItem button>
-                           <Link to="/episodes" style={{textDecoration:"none", color:"white"}}><ListItemText style={{padding:"10%"}} button>Episodes</ListItemText></Link> 
+                        
+                        <ListItem button style={{ padding:"3%"}}>
+                          <Link to="/episodes" style={{textDecoration:"none", color:"white",  width:"100%", padding:"3%"}}> 
+                          
+                           <ListItemText style={{padding:"10%", fontSize:"1rem", textAlign:'center'}}>Episodes</ListItemText></Link>
                         </ListItem>
 
+ <Divider style={{background:"white"}} />
 
-                        <Divider />
-
-                        <ListItem button>
-                           <Link to="/characters" style={{textDecoration:"none", color:"white"}}><ListItemText style={{padding:"10%"}}>Characters</ListItemText></Link> 
+                        <ListItem button style={{ padding:"3%"}}>
+                          <Link to="/characters" style={{textDecoration:"none", color:"white",width:"100%", padding:"3%"}}> 
+                          
+                           <ListItemText style={{padding:"10%", fontSize:"1rem",textAlign:'center'}}>Characters</ListItemText></Link>
                         </ListItem>
-                        <Divider />
+ <Divider style={{background:"white"}} />
                     </List>
+
+                    <div>
+                        <p>Contact me model</p>
+                        </div>
                 </div>
                 {/* //end of sidebar navigation */}
 
 
                 {/* //welcome page content here */}
-                <div style={{border: "solid 2px green", width:"100%", textAlign:"center"}}>
-                    <Typography variant="h4" style={{border:"solid 2px red", padding:"3%"}}>Welcome to the Rick and Morty Fan page</Typography>
+                <div style={{border: "solid 2px white", width:"100%", textAlign:"center", margin: "0 auto"}}>
+                    <Typography variant="h4" style={{border:"solid 2px white", padding:"3%"}}>Welcome to the Rick and Morty Fan page</Typography>
 
                     <div>
                         <Typography style={{padding:"5%"}}>
@@ -112,7 +123,7 @@ const WelcomePage = () => {
                     <div style={{display:"flex", justifyContent:"space-evenly", alignContent:"center", margin:" 3% 0"}}>
 
 
-                        <div style={{border:"solid 2px yellow", width:"40%"}}> video 1
+                        <div style={{border:"solid 2px white", width:"40%"}}> video 1
                         <iframe width="460" height="315" src="https://www.youtube.com/embed/NJR8YkABcwY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
 
@@ -120,12 +131,12 @@ const WelcomePage = () => {
                         <Divider orientation="vertical" />
 
 
-                        <div style={{border:"solid 2px yellow", width:"40%"}}> video 2
+                        <div style={{border:"solid 2px white", width:"40%"}}> video 2
                         <iframe width="460" height="315" src="https://www.youtube.com/embed/s_1lP4CBKOg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                     {/* Video container ends here */}
-                            <Divider />
+                            <Divider style={{background:"white"}} />
                     <div>
                         <p>TV Networks where you can find your favorite episodes of Rick and Morty</p>
 

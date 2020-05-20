@@ -1,5 +1,8 @@
-import React from "react";
+import React,{ useEffect, useState } from "react";
 import {Card, CardHeader, makeStyles} from "@material-ui/core"
+import axios from "axios"
+
+
 const useStyles = makeStyles((theme) => ({
     cards:{
         width:"30%",
@@ -11,16 +14,33 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-export default function CharacterCard(props) {
+export default function CharacterCard() {
     const classes = useStyles()
+    const [character , setCharacter ] = useState()
+    const [query, setQuery] = useState('')
+
+
+    useEffect(() => {
+       
+        axios
+        .get(`https://rickandmortyapi.com/api/character/`)
+        .then(res => {
+            const SoloEpi = res.data;
+            setCharacter(SoloEpi)
+            console.log("this is chacracter", res)
+        })
+    }, [character])
   return (
     <div>
-  
-      <Card className={classes.cards}>
-          <CardHeader title={props.character.name} subheader={props.character.status} />
-        <h3>Gender: {props.character.gender}</h3>
-        <img className={classes.CharacterIMG} alt="characters of rick and morty" src={props.character.image} />
-      </Card>
+        <div>
+        
+            <div>
+                <p >{character.name}</p>
+            </div>
+        
+
+            
+</div>
 
       </div>
 
